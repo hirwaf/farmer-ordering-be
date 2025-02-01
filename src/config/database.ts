@@ -1,5 +1,9 @@
 import "reflect-metadata";
 import { DataSource } from "typeorm";
+import {Farmer} from "../entities/Farmer";
+import {Fertilizer} from "../entities/Fertilizer";
+import {Seed} from "../entities/Seed";
+import {Order} from "../entities/Order";
 
 export const AppDataSource = new DataSource({
   type: "postgres",
@@ -10,7 +14,7 @@ export const AppDataSource = new DataSource({
   database: process.env.POSTGRES_DB,
   synchronize: process.env.NODE_ENV !== "production",
   logging: false,
-  entities: [],
+  entities: [Farmer, Fertilizer, Seed, Order],
   migrations: [],
   subscribers: [],
   ssl: false

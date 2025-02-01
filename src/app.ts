@@ -20,7 +20,7 @@ AppDataSource.initialize()
   .catch((error: any) => console.log('Database connection error:', error));
 
 // Routes
-app.use("/", routes);
+app.use("/api/v1", routes);
 
 // Error handling
 app.use((err: Error, req: express.Request, res: express.Response, next: express.NextFunction) => {
